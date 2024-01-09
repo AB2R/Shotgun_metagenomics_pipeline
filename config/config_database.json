@@ -1,0 +1,5 @@
+{
+    "metaphlan_database": {
+        "database_path": "database/metaphlan_database"
+    }
+}

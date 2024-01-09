@@ -1,0 +1,15 @@
+name: r-ecological
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-stringr
+  - r-dplyr
+  - ca-certificates
+  - openssl
+  - r-ggplot2
+  - r-viridis
+  - r-cowplot
+  - r-vegan
+  - r-rmarkdown

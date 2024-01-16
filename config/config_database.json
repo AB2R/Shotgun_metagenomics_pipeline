@@ -1,5 +1,11 @@
 {
     "metaphlan_database": {
         "database_path": "database/metaphlan_database"
+    },
+    "bacmet_database": {
+        "database_path": "database/bacmet",
+        "path_fasta": "http://bacmet.biomedicine.gu.se/download/BacMet2_EXP_database.fasta",
+        "path_annotation": "http://bacmet.biomedicine.gu.se/download/BacMet2_EXP.753.mapping.txt",
+        "path_bacmet_scan": "http://bacmet.biomedicine.gu.se/download/BacMet-Scan"
     }
 }

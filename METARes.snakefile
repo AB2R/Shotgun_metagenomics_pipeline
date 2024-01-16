@@ -24,6 +24,10 @@ include: "rules/bacterial_population.py"
 include: "rules/megahit.py"
 include: "rules/filter_metagenome.py"
 include: "rules/metaquast.py"
+include: "rules/prodigal.py"
+include: "rules/abundance.py"
+include: "rules/abricate.py"
+include: "rules/bacmet.py"
 
 list_files_output = get_all_output_files(config)
 

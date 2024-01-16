@@ -102,10 +102,29 @@ def get_all_output_files(config):
         list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/metaphlan/{sample['sampleID']}_metaphlan_profile.txt")
         list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/metaphlan/{sample['sampleID']}_metaphlan.bowtie2.bz2")
 
+        #metagenome
+        list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/metagenome/clean_metagenome/{sample['sampleID']}_metagenome_filtered_contig.fa")
+
+        #metaquast
+        if config['metaquast']['process_analysis'] == "True":
+            list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/metagenome/metaquast/report.html")
+
+        #gene annotation
+        list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/prodigal/{sample['sampleID']}_genes_proteins.faa")
+        list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/prodigal/{sample['sampleID']}_genes_nucleotides.fna")
+
+        #reads abundance
+        list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/abundance/{sample['sampleID']}_reads_abundance.tab")
+
+        #abricate
+        list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/abricate/{sample['sampleID']}_ARG.card.tab")
+        list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/abricate/{sample['sampleID']}_ARG.ncbi.tab")
+        list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/abricate/{sample['sampleID']}_ARG.resfinder.tab")
+
+        #bacmet
+        list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/bacmet/{sample['sampleID']}_BRG_MRG_bacmet.txt")
+
     if config['r-ecological']['process_analysis'] == "True":
         list_files.append(f"{PROJECTNAME}/sample_analysis/bacterial_community/result_ecological_analysis.html")
-
-    # +++
     
     return list_files
-

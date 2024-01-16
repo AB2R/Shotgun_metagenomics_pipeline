@@ -2,7 +2,7 @@ rule metagenome_bowtie_build:
     input:
         metagenome = f"{PROJECTNAME}/{{sample}}/metagenome/megahit/{{sample}}_metagenome.contigs.fa"
     output:
-        index_host_genome = f"{PROJECTNAME}/{{sample}}/metagenome/megahit/{{sample}}_metagenome.1.bt2"
+        index_metagenome = f"{PROJECTNAME}/{{sample}}/metagenome/megahit/{{sample}}_metagenome.1.bt2"
     params:
         metagenome_basename = f"{PROJECTNAME}/{{sample}}/metagenome/megahit/{{sample}}_metagenome"
     log:

@@ -18,7 +18,7 @@
         "database_path": "database/metaphlan_database"
     },
     "r-ecological": {
-        "process_analysis": "False",
+        
         "threshold_best_abundance": 2
     },
     "megahit": {
@@ -39,6 +39,23 @@
         "contig_len": 500
     },
     "metaquast": {
+        "process_analysis": "False",
         "threads": 8
+    },
+    "genes_bowtie_build": {
+        "threads": 8
+    },
+    "abundance": {
+        "threads": 8
+    },
+    "abricate": {
+        "threads": 8,
+        "minid": 80,
+        "mincov": 80
+    },
+    "bacmet": {
+        "threads": 8,
+        "database_path": "database/bacmet/",
+        "bacmet_scan": "./database/bacmet/BacMet-Scan"
     }
 }

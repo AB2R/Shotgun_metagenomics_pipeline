@@ -1,0 +1,7 @@
+name: bacmet
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - blast

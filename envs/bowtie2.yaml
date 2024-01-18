@@ -8,3 +8,5 @@ dependencies:
   - samtools
   - ca-certificates
   - openssl
+  - seqtk
+

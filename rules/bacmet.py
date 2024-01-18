@@ -14,5 +14,6 @@ rule bacmet:
         config["bacmet"]["threads"]
     shell:
         """
+        chmod +x {params.bacmet_scan}
         {params.bacmet_scan} -cpu {threads} -i {input.gene_proteins} -protein -blast -table -counts -o {output.bacmet_result} -d {params.database_path} 2>{log}
         """

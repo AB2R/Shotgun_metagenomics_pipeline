@@ -55,7 +55,7 @@
     },
     "bacmet": {
         "threads": 8,
-        "database_path": "database/bacmet/",
+        "database_path": "./database/bacmet/BacMet2_EXP",
         "bacmet_scan": "./database/bacmet/BacMet-Scan"
     }
 }

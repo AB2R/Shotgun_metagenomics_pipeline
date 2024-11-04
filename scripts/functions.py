@@ -12,15 +12,9 @@ def mkdirectory(project_name, samples_list):
     if not os.path.exists(project_name):
         os.makedirs(project_name)
 
-    list_project_directory = ['logs', 'host_genome', 'sample_analysis']
+    list_project_directory = ['logs', 'host_genome']
     for directory in list_project_directory:
-        if directory == 'sample_analysis':
-            if not os.path.exists(f"{project_name}/sample_analysis/bacterial_community"):
-                os.makedirs(f"{project_name}/sample_analysis/bacterial_community")
-            if not os.path.exists(f"{project_name}/sample_analysis/AMR"):
-                os.makedirs(f"{project_name}/sample_analysis/AMR")
-
-        elif directory == 'host_genome':
+        if directory == 'host_genome':
             if not os.path.exists(f"{project_name}/host_genome"):
                 os.makedirs(f"{project_name}/host_genome")
 
@@ -123,8 +117,5 @@ def get_all_output_files(config):
 
         #bacmet
         list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/bacmet/{sample['sampleID']}_BRG_MRG_bacmet.txt")
-
-    if config['r-ecological']['process_analysis'] == "True":
-        list_files.append(f"{PROJECTNAME}/sample_analysis/bacterial_community/result_ecological_analysis.html")
     
     return list_files

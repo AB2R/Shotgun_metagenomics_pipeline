@@ -2,7 +2,6 @@ name: r-ecological
 channels:
   - conda-forge
   - bioconda
-  - defaults
 dependencies:
   - r-stringr
   - r-dplyr

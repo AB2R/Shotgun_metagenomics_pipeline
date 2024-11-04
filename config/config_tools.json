@@ -25,7 +25,7 @@
         "threads": 16,
         "k-step": 12,
         "k-min": 21,
-        "min-contig-len": 500,
+        "min-contig-len": 1000,
         "others_options": "--force"
     },
     "metagenome_bowtie_build": {
@@ -36,7 +36,7 @@
     },
     "filter_contig": {
         "mean_coverage": 1,
-        "contig_len": 500
+        "contig_len": 1000
     },
     "metaquast": {
         "process_analysis": "False",

@@ -2,6 +2,5 @@ name: ncbi-download
 channels:
   - conda-forge
   - bioconda
-  - defaults
 dependencies:
   - ncbi-datasets-cli

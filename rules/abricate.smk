@@ -12,6 +12,8 @@ rule abricate:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_abricate.log"
     conda:
         "../envs/abricate.yaml"
+    container:
+        "docker://quay.io/biocontainers/abricate:0.2--0"
     threads:
         config['abricate']['threads']
     shell:

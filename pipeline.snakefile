@@ -14,19 +14,19 @@ SAMPLES = get_list_sample(config['sample'])
 ### Rules
 
 ### Import rules
-include: "rules/fastp.py"
-include: "rules/download_genome_NCBI.py"
-include: "rules/host_bowtie_build.py"
-include: "rules/alignement_host_genome.py"
-include: "rules/remove_host_reads.py"
-include: "rules/metaphlan.py"
-include: "rules/megahit.py"
-include: "rules/filter_metagenome.py"
-include: "rules/metaquast.py"
-include: "rules/prodigal.py"
-include: "rules/abundance.py"
-include: "rules/abricate.py"
-include: "rules/bacmet.py"
+include: "rules/fastp.smk"
+include: "rules/download_genome_NCBI.smk"
+include: "rules/host_bowtie_build.smk"
+include: "rules/alignement_host_genome.smk"
+include: "rules/remove_host_reads.smk"
+include: "rules/metaphlan.smk"
+include: "rules/megahit.smk"
+include: "rules/filter_metagenome.smk"
+include: "rules/metaquast.smk"
+include: "rules/prodigal.smk"
+include: "rules/abundance.smk"
+include: "rules/abricate.smk"
+include: "rules/bacmet.smk"
 
 list_files_output = get_all_output_files(config)
 

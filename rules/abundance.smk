@@ -49,6 +49,8 @@ rule reads_abundance:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_reads_abundance.log"
     conda:
         "../envs/bowtie2.yaml"
+    container:
+        "docker://quay.io/biocontainers/bioconductor-rsamtools:1.32.3--r351hfc679d8_0"
     threads:
         config['abundance']['threads']
     shell:

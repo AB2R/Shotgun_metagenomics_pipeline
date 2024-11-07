@@ -32,7 +32,7 @@ rule reads_sort:
         config['abundance']['threads']
     shell:
         """
-        bowtie2 -p {threads} -x {params.metagenome_basename} -1 {input.clean_host_R1} -2 {input.clean_host_R2} | \
+        bowtie2 -p {threads} -x {params.genes_basename} -1 {input.clean_host_R1} -2 {input.clean_host_R2} | \
         samtools view -b -h -@ {threads} - | \
         samtools sort -@ {threads} -o {output.reads_sort_bam} - 2>{log}
         """

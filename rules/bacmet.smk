@@ -4,7 +4,7 @@ rule bacmet:
     output:
         bacmet_result = f"{PROJECTNAME}/{{sample}}/annotation/bacmet/{{sample}}_BRG_MRG_bacmet.txt"
     params:
-        database_path = config["bacmet"]["database_path"]
+        database_path = config["bacmet"]["database_path"],
         bacmet_scan = config["bacmet"]["bacmet_scan"]
     log:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_bacmet.log"

@@ -50,7 +50,7 @@ rule filter_contig:
     shell:
         """
         awk '$7>={params.mean_coverage} && $3>={params.contig_len}' {input.metagenome_coverage} | \
-        awk '{print $1}' > {output.contig_list}
+        awk '{{print $1}}' > {output.contig_list}
         """
 
 rule clean_metagenome:

@@ -12,7 +12,7 @@ rule all:
         "bacmet_db_downloaded"
 
 onsuccess:
-    shell(rm *_db_downloaded)
+    shell("rm *_db_downloaded")
 
 
 rule metaphlan_database:

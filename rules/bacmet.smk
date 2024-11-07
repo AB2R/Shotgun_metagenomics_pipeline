@@ -9,7 +9,7 @@ rule bacmet:
     log:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_bacmet.log"
     conda:
-        "../envs/bacmet.yaml"
+        "../envs/blast.yaml"
     threads:
         config["bacmet"]["threads"]
     shell:

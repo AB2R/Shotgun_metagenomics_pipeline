@@ -11,6 +11,8 @@ rule alignement_host_genome:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_alignement_host_genome.log"
     conda:
         "../envs/bowtie2.yaml"
+    container:
+        "docker://quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:4a9a541c36b8cd94820e79a67718c44f3522b7c6-0"
     threads:
         config['alignement_host_genome']['threads']
     shell:

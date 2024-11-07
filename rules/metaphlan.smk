@@ -9,6 +9,8 @@ rule metaphlan:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_metaphlan.log"
     conda:
         "../envs/metaphlan.yaml"
+    container:
+        "docker://qbioturin/metaphlan4:0.3.2"
     threads:
         config['metaphlan']['threads']
     shell:

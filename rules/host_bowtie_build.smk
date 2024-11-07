@@ -9,6 +9,8 @@ rule host_bowtie_build:
         f"{PROJECTNAME}/logs/host_bowtie_build.log"
     conda:
         "../envs/bowtie2.yaml"
+    container:
+        "docker://quay.io/biocontainers/bowtie2:2.5.4--h7071971_4"
     threads:
         config['host_bowtie_build']['threads']
     shell:

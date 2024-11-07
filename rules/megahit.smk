@@ -15,6 +15,8 @@ rule megahit:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_megahit.log"
     conda:
         "../envs/megahit.yaml"
+    container:
+        "docker://quay.io/biocontainers/megahit:1.2.9--h43eeafb_5"
     threads:
         config['megahit']['threads']
     shell:

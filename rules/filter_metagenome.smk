@@ -9,6 +9,8 @@ rule metagenome_bowtie_build:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_metagenome_bowtie_build.log"
     conda:
         "../envs/bowtie2.yaml"
+    container:
+        "docker://quay.io/biocontainers/bowtie2:2.5.4--h7071971_4"
     threads:
         config['metagenome_bowtie_build']['threads']
     shell:
@@ -29,6 +31,8 @@ rule alignment_metagenome:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_metagenome_coverage.log"
     conda:
         "../envs/bowtie2.yaml"
+    container:
+        "docker://quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:4a9a541c36b8cd94820e79a67718c44f3522b7c6-0"
     threads:
         config['metagenome_coverage']['threads']
     shell:
@@ -61,6 +65,8 @@ rule clean_metagenome:
         clean_metagenome = f"{PROJECTNAME}/{{sample}}/metagenome/clean_metagenome/{{sample}}_metagenome_filtered_contig.fa"
     conda:
         "../envs/bowtie2.yaml"
+    container:
+        "docker://quay.io/biocontainers/seqtk:1.4--he4a0461_2"
     shell:
         """
         seqtk subseq {input.metagenome} {input.contig_list} > {output.clean_metagenome}

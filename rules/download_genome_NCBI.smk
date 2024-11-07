@@ -8,6 +8,8 @@ rule download_genome_host:
         f"{PROJECTNAME}/logs/download_genome_host.log"
     conda:
         "../envs/ncbi-download.yaml"
+    container:
+        "docker://biocontainers/ncbi-datasets-cli:16.22.1_cv1"
     shell:
         """
         chmod +x scripts/download_host_genome.sh

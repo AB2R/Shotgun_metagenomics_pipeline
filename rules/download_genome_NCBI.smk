@@ -10,5 +10,6 @@ rule download_genome_host:
         "../envs/ncbi-download.yaml"
     shell:
         """
+        chmod +x scripts/download_host_genome.sh
         scripts/download_host_genome.sh {params.host_directory} {params.refseq_ID} 2>{log}
         """

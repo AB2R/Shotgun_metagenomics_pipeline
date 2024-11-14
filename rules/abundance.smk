@@ -21,7 +21,8 @@ rule genes_bowtie_build:
 rule reads_sort:
     input:
         clean_host_R1 = f"{PROJECTNAME}/{{sample}}/reads/cleaning_host/{{sample}}_clean_host_reads_R1.fastq.gz",
-        clean_host_R2 = f"{PROJECTNAME}/{{sample}}/reads/cleaning_host/{{sample}}_clean_host_reads_R2.fastq.gz"
+        clean_host_R2 = f"{PROJECTNAME}/{{sample}}/reads/cleaning_host/{{sample}}_clean_host_reads_R2.fastq.gz",
+        index_genes = f"{PROJECTNAME}/{{sample}}/annotation/prodigal/{{sample}}_genes.1.bt2"
     output:
         reads_sort_bam = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_sort_reads.bam"
     params:

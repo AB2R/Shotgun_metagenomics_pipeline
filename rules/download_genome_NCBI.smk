@@ -8,7 +8,7 @@ rule download_genome_host:
         f"{PROJECTNAME}/logs/download_genome_host.log"
     conda:
         "../envs/ncbi-download.yaml"
-    container:
+    singularity:
         "docker://biocontainers/ncbi-datasets-cli:16.22.1_cv1"
     shell:
         """

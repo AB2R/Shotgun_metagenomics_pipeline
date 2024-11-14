@@ -10,7 +10,7 @@ rule bacmet:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_bacmet.log"
     conda:
         "../envs/blast.yaml"
-    container:
+    singularity:
         "docker://quay.io/biocontainers/blast:2.16.0--hc155240_2"
     threads:
         config["bacmet"]["threads"]

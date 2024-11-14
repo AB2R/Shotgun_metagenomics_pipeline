@@ -9,7 +9,7 @@ rule genes_bowtie_build:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_genes_bowtie_build.log"
     conda:
         "../envs/bowtie2.yaml"
-    container:
+    singularity:
         "docker://quay.io/biocontainers/bowtie2:2.5.4--h7071971_4"
     threads:
         config['genes_bowtie_build']['threads']
@@ -30,7 +30,7 @@ rule reads_sort:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_reads_abundance.log"
     conda:
         "../envs/bowtie2.yaml"
-    container:
+    singularity:
         "docker://quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:4a9a541c36b8cd94820e79a67718c44f3522b7c6-0"
     threads:
         config['abundance']['threads']
@@ -53,7 +53,7 @@ rule reads_abundance:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_reads_abundance.log"
     conda:
         "../envs/bowtie2.yaml"
-    container:
+    singularity:
         "docker://quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
     threads:
         config['abundance']['threads']

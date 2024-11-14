@@ -8,7 +8,7 @@ rule remove_host_reads:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_alignement_host_genome.log"
     conda:
         "../envs/samtools.yaml"
-    container:
+    singularity:
         "docker://quay.io/biocontainers/samtools:1.21--h50ea8bc_0"
     threads:
         config['remove_host_reads']['threads']

@@ -9,7 +9,7 @@ rule metagenome_bowtie_build:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_metagenome_bowtie_build.log"
     conda:
         "../envs/bowtie2.yaml"
-    container:
+    singularity:
         "docker://quay.io/biocontainers/bowtie2:2.5.4--h7071971_4"
     threads:
         config['metagenome_bowtie_build']['threads']
@@ -31,7 +31,7 @@ rule alignment_metagenome:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_metagenome_coverage.log"
     conda:
         "../envs/bowtie2.yaml"
-    container:
+    singularity:
         "docker://quay.io/biocontainers/mulled-v2-c742dccc9d8fabfcff2af0d8d6799dbc711366cf:4a9a541c36b8cd94820e79a67718c44f3522b7c6-0"
     threads:
         config['metagenome_coverage']['threads']

@@ -9,7 +9,7 @@ rule prodigal:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_prodigal.log"
     conda:
         "../envs/prodigal.yaml"
-    container:
+    singularity:
         "docker://biocontainers/prodigal:v1-2.6.3-4-deb_cv1"
     shell:
         """

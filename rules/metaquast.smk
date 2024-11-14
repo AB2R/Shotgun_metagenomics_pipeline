@@ -11,7 +11,7 @@ rule metaquast:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_metaquast.log"
     conda:
         "../envs/quast.yaml"
-    container:
+    singularity:
         "docker://quay.io/biocontainers/quast:5.2.0--py38pl5321h40d3509_4"
     threads:
         config['metaquast']['threads']

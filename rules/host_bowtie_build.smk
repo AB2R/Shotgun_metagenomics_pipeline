@@ -1,9 +1,12 @@
+def get_host_genome(config):
+    if config['host']['host_path_file'] == "":
+        return(f"{PROJECTNAME}/host_genome/host_genome.fna")
+    else:
+        return(config['host']['host_path_file'])
+
 rule host_bowtie_build:
     input:
-        if config['host']['host_path_file'] == "":
-            host_genome = f"{PROJECTNAME}/host_genome/host_genome.fna"
-        else:
-            host_genome = config['host']['host_path_file']
+        host_genome = get_host_genome(config)
     output:
         index_host_genome = f"{PROJECTNAME}/host_genome/host_genome.1.bt2"
     params:

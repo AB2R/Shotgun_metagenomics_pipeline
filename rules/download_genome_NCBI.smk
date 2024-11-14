@@ -2,7 +2,7 @@ rule download_genome_host:
     output:
         genome_host = f"{PROJECTNAME}/host_genome/host_genome.fna"
     params:
-        refseq_ID = config['host_ncbi_refseq'],
+        refseq_ID = config['host']['host_ncbi_refseq'],
         host_directory = f"{PROJECTNAME}/host_genome/"
     log:
         f"{PROJECTNAME}/logs/download_genome_host.log"

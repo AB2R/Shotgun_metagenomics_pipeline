@@ -1,7 +1,7 @@
 rule fastp:
     input:
-        raw_R1 = f"{config['path_file']}{{sample}}_R1.fastq.gz",
-        raw_R2 = f"{config['path_file']}{{sample}}_R2.fastq.gz"
+        raw_R1 = f"{config['read_path_file']}{{sample}}_R1.fastq.gz",
+        raw_R2 = f"{config['read_path_file']}{{sample}}_R2.fastq.gz"
     output:
         clean_R1 = f"{PROJECTNAME}/{{sample}}/reads/fastp/{{sample}}_clean_R1.fastq.gz",
         clean_R2 = f"{PROJECTNAME}/{{sample}}/reads/fastp/{{sample}}_clean_R2.fastq.gz",

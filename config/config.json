@@ -1,8 +1,11 @@
 {
     "project_name": "",
-    "host_species": "",
-    "host_ncbi_refseq": "",
-    "path_file": "",
+    "host": {
+        "host_species": "",
+        "host_ncbi_refseq": "",
+        "host_path_file": ""
+    },
+    "read_path_file": "",
     "sample": [
         {
             "sampleID": ""

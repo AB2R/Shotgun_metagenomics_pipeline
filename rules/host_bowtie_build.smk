@@ -1,6 +1,9 @@
 rule host_bowtie_build:
     input:
-        host_genome = f"{PROJECTNAME}/host_genome/host_genome.fna"
+        if config['host']['host_path_file'] == "":
+            host_genome = f"{PROJECTNAME}/host_genome/host_genome.fna"
+        else:
+            host_genome = config['host']['host_path_file']
     output:
         index_host_genome = f"{PROJECTNAME}/host_genome/host_genome.1.bt2"
     params:

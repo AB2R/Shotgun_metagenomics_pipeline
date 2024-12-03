@@ -22,7 +22,7 @@ rule alignment_metagenome:
     input:
         clean_host_R1 = f"{PROJECTNAME}/{{sample}}/reads/cleaning_host/{{sample}}_clean_host_reads_R1.fastq.gz",
         clean_host_R2 = f"{PROJECTNAME}/{{sample}}/reads/cleaning_host/{{sample}}_clean_host_reads_R2.fastq.gz",
-        metagenome = f"{PROJECTNAME}/{{sample}}/metagenome/megahit/{{sample}}_metagenome.contigs.fa"
+        metagenome = f"{PROJECTNAME}/{{sample}}/metagenome/megahit/{{sample}}_metagenome.1.bt2"
     output:
         metagenome_coverage = f"{PROJECTNAME}/{{sample}}/metagenome/clean_metagenome/{{sample}}_metagenome.cov"
     params:

@@ -2,7 +2,7 @@ rule bacmet:
     input:
         gene_proteins = f"{PROJECTNAME}/{{sample}}/annotation/prodigal/{{sample}}_genes_proteins.faa",
     output:
-        bacmet_result = f"{PROJECTNAME}/{{sample}}/annotation/bacmet/{{sample}}_BRG_MRG_bacmet.txt"
+        bacmet_result = f"{PROJECTNAME}/{{sample}}/annotation/bacmet/{{sample}}_BRG_MRG_bacmet.txt.table"
     params:
         database_path = config["bacmet"]["database_path"],
         bacmet_scan = config["bacmet"]["bacmet_scan"]

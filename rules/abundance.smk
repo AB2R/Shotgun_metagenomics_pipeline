@@ -46,8 +46,7 @@ rule reads_abundance:
     input:
         reads_sort_bam = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_sort_reads.bam"
     output:
-        reads_abundance = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_reads_abundance.tab",
-        bam_index = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_sort_reads.bam.bai"
+        reads_abundance = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_reads_abundance.tab"
     params:
         remove_file = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_sort_reads.bam*"
     log:

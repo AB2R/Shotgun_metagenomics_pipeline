@@ -46,9 +46,9 @@ rule reads_abundance:
     input:
         reads_sort_bam = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_sort_reads.bam"
     output:
-        reads_abundance = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_reads_abundance.tab",
-        bam_index = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_sort_reads.bam.bai"
+        reads_abundance = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_reads_abundance.tab"        
     params:
+        bam_index = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_sort_reads.bam.bai",
         remove_file = f"{PROJECTNAME}/{{sample}}/annotation/abundance/{{sample}}_sort_reads.bam*"
     log:
         f"{PROJECTNAME}/logs/{{sample}}/{{sample}}_reads_abundance.log"
@@ -60,7 +60,7 @@ rule reads_abundance:
         config['abundance']['threads']
     shell:
         """
-        samtools index -@ {threads} -o {output.bam_index} {input.reads_sort_bam} 2>>{log}
+        samtools index -@ {threads} -o {params.bam_index} {input.reads_sort_bam} 2>>{log}
         samtools idxstats -@ {threads} {input.reads_sort_bam} > {output.reads_abundance} 2>>{log}
         rm {params.remove_file}
         """

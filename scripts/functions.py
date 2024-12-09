@@ -116,6 +116,6 @@ def get_all_output_files(config):
         list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/abricate/{sample['sampleID']}_ARG.resfinder.tab")
 
         #bacmet
-        list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/bacmet/{sample['sampleID']}_BRG_MRG_bacmet.txt.table")
+        list_files.append(f"{PROJECTNAME}/{sample['sampleID']}/annotation/bacmet/{sample['sampleID']}_BRG_MRG_bacmet.txt")
     
     return list_files
